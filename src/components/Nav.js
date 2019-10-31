@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from 'antd';
+import '../styles/nav.css'
+import { Link } from 'react-router-dom'
 
 class Nav extends React.Component {
 
@@ -10,17 +12,20 @@ class Nav extends React.Component {
 				height: '50px'
 			},
 			logo: {
-				width: '100px',
-				height: '100px'
+				fontWeight: 'bold',
+				paddingTop: '0.7%',
+				paddingLeft: '2.5%',
+				fontSize: '20px',
+				color: '#116466',
+				textDecoration: 'none'
 			}
 		}
 		return (
 			<nav style={styles.nav}>
 				<a href="/index" ></a>
-				<div>
-					<a href="/profile" >
-						<div></div>
-					</a>
+				<div className='navContainer'>
+						<Link to='/' style={styles.logo}>Calorie Calculator</Link>
+						<i style={styles.logo} class="fab fa-twitter"></i>
 				</div>
 			</nav>
 		)

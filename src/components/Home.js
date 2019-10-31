@@ -98,9 +98,11 @@ class Home extends React.Component {
 		const styles = {
 			background: {
 				backgroundImage: "url('./logo.svg')",
-				backgroundRepare: 'none'
+				backgroundRepeat: 'none'
 			},
 			form: {
+				borderRadius: '25px',
+				fontWeight: "bold",
 				backgroundColor: '#D9B08C',
 				color: '#2C3531',
 				textAlign: 'center',
@@ -110,61 +112,76 @@ class Home extends React.Component {
 			},
 			container: {
 				display: 'grid',
-				gridTemplateColumns: '33% 33% 33%'
+				gridTemplateColumns: '33% 33% 33%',
+				marginTop: '10%',
+				marginBottom: '20%'
 			},
 			title: {
-				padding: '5%'
+				padding: '5%',
+				textAlign: 'center'
+			},
+			topContainer: {
+				display: 'grid',
+				gridTemplateRows: '40% 60%'
+			},
+			image: {
+				width: '800px',
+				marginLeft: '25%',
+				marginTop: '5%'
+			},
+			intro: {
+				marginLeft: '30%',
+				marginTop: '10%'
 			}
 		}
   return (
-    <div style={styles.background} className='background'>
+    <div  className='background'>
+
 			<Nav></Nav>
-			<h1 className="title">Welcome to calorie calculator</h1>
+
+			<img style={styles.image} src='./logo.svg'></img>
+
+			<div style={styles.intro}>
+				<h1 className="title">Welcome to calorie calculator!</h1>
+				<h1 className="title"> To calculate your caloric needs,</h1>
+				<h1 className="title"> just answer the questions below!</h1>
+			</div>
 
 			<div style={styles.container}>
-
 				<div></div>
-
-				<form onSubmit={this.submit} style={styles.form}>
-
-						<div style={styles.title} >Please select a gender:</div>
-								<select onChange={this.setGender}>
-									<option disabled selected value> -- select an option -- </option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-								</select>
-
-						<div style={styles.title}>Please enter your age:</div>
-							<input type='text' onInput={(e)=>this.changeField(e, 'age')} placeholder="Your age here" ></input>
-
-				  	<div style={styles.title}>Please enter your height:</div>
-							<div>
-								<span>Feet</span>
-								<select onChange={this.convertFeet}>
+				<form style={styles.background} onSubmit={this.submit} style={styles.form}>
+						<h2 style={styles.title} >Just fill in this form:</h2>
+							<input type='text' className='input' onInput={(e)=>this.changeField(e, 'age')} placeholder="Please enter your age" ></input>
+							<input type='text' className='input' onInput={(e)=>this.changeField(e, 'weight')} placeholder="Please enter your weight"></input>
+							<select className='select' onChange={this.setGender}>
+								<option disabled selected value> Please select a gender </option>
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+							</select>
+							<div className='height'>
+								<span>Height: </span>
+								<select className='select' onChange={this.convertFeet}>
+								<option disabled selected value>Feet(')</option>
 									{
 										this.state.height.feet.map(foot => <option value={foot}>{foot}</option>)
 									}
 								</select>
-								<span>Inches</span>
-								<select onChange={this.setInches}>
+								<select className='select' onChange={this.setInches}>
+								<option disabled selected value>Inches(")</option>
 									{
 										this.state.height.inches.map(inch => <option value={inch}>{inch}</option>)
 									}
 								</select>
 							</div>
-
-				<div style={styles.title}>Please enter your weight:</div>
-					<input type='text' onInput={(e)=>this.changeField(e, 'weight')} placeholder="135lbs"></input>
-
-					<div style={styles.title}>Lastly...how active do you consider yourself?</div>
-				    <span>Activity Level</span>
-				    <select onChange={(e)=>this.change(e, 'activityLevel')}>
-							<option disabled selected value> -- select an option -- </option>
-				     <option value="low">Not Active</option>
+				    <select className='select' onChange={(e)=>this.change(e, 'activityLevel')}>
+						<option disabled selected value>Please select an activity level</option>
+				     <option value="low">Not Very Active</option>
 				     <option value="mid">Moderately Active</option>
-				     <option value="high">Highly Active</option>
+				     <option value="high">Very Active</option>
 				   </select>
-				<button >Submit</button>
+					 <div>
+						<button className='button'>Submit</button>
+					</div>
 			</form>
 			<div></div>
 		</div>
