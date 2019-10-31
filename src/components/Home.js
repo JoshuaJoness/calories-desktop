@@ -74,7 +74,7 @@ class Home extends React.Component {
 	submit = (e) => {
 		e.preventDefault()
 		let user = this.state.user
-		axios.post('http://localhost:4000/calories',
+		axios.post(`${process.env.REACT_APP_API}/calories`,
 		this.state.user
 	).then(res => {
 		console.log('res.data',res.data);
