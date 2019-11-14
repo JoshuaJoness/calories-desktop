@@ -161,7 +161,7 @@ class Home extends React.Component {
 		<div className='secondContainer'>
 			<center>
 
-			<h1>Want to lost weight or build muslce?</h1>
+			<h1>Want to lose weight or build muslce?</h1>
 
 
 			<form onSubmit={this.submit} className='form'>
