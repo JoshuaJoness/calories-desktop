@@ -8,25 +8,29 @@ class Nav extends React.Component {
 	render () {
 		const styles = {
 			nav: {
-				backgroundColor: '#D9B08C',
-				height: '50px'
+
+				height: '50px',
+				position: 'fixed'
 			},
 			logo: {
-				fontWeight: 'bold',
-				paddingTop: '0.7%',
-				paddingLeft: '2.5%',
-				fontSize: '20px',
-				color: '#116466',
-				textDecoration: 'none'
+				marginTop: '2%',
+				marginLeft: '2%',
+				fontSize: '30px',
+				color: '#FFFFFF',
+				textDecoration: 'none',
+				fontFamily: "Yeon Sung, cursive",
+				textAlign: 'center'
 			}
 		}
 		return (
 			<nav style={styles.nav}>
 				<a href="/index" ></a>
-				<div className='navContainer'>
-						<Link to='/' style={styles.logo}>Calorie Calculator</Link>
-						<i style={styles.logo} class="fab fa-twitter"></i>
-				</div>
+
+					<Link to='/' className='navItem' style={styles.logo}><i class="fas fa-dumbbell"></i></Link>
+					<Link to='/' className='navItem' style={styles.logo}>About</Link>
+					<Link to='/' className='navItem' style={styles.logo}>Services</Link>
+					<Link to='/' className='navItem' style={styles.logo}>Products</Link>
+					<Link to='/' className='navItem' style={styles.logo}>Trainers</Link>
 			</nav>
 		)
 	}

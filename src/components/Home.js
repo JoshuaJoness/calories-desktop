@@ -2,18 +2,9 @@ import React from 'react';
 import Nav from './Nav'
 import axios from 'axios'
 import '../styles/home.css'
+import Button from '@material-ui/core/Button';
 
 class Home extends React.Component {
-	state = {
-		user:{
-			totalInches: 0,
-			activityLevel: ''
-		},
-		height:{
-			feet:[1,2,3,4,5,6,7,8],
-			inches:[1,2,3,4,5,6,7,8,9,11]
-		}
-	}
 
 	changeField (e, field){
 		console.log('hello');
@@ -90,103 +81,130 @@ class Home extends React.Component {
 	})
 	}
 
-	test = (e) => {
-		console.log('hello');
+	state = {
+		user:{
+			totalInches: 0,
+			activityLevel: ''
+		},
+		height:{
+			feet:[1,2,3,4,5,6,7,8],
+			inches:[1,2,3,4,5,6,7,8,9,11]
+		}
 	}
+
 
 	render() {
 		const styles = {
-			background: {
-				backgroundImage: "url('./logo.svg')",
-				backgroundRepeat: 'none'
-			},
-			form: {
-				borderRadius: '25px',
-				fontWeight: "bold",
-				backgroundColor: '#D9B08C',
-				color: '#2C3531',
+			container:{
+				backgroundColor:'#FFF6B6',
+				color: '#303030',
 				textAlign: 'center',
-				paddingTop: '10%',
-				paddingBottom: '10%',
-				opacity: '1 !important'
-			},
-			container: {
-				display: 'grid',
-				gridTemplateColumns: '33% 33% 33%',
-				marginTop: '10%',
-				marginBottom: '20%'
-			},
-			title: {
-				padding: '5%',
-				textAlign: 'center'
-			},
-			topContainer: {
-				display: 'grid',
-				gridTemplateRows: '40% 60%'
-			},
-			image: {
-				width: '800px',
-				marginLeft: '25%',
-				marginTop: '5%'
+				fontFamily: "Yeon Sung, cursive",
+				height: '80vh'
 			},
 			intro: {
-				marginLeft: '30%',
-				marginTop: '10%'
+				display: 'grid',
+				gridTemplateColumns: '50% 50%',
+				fontFamily: "Yeon Sung, cursive",
+				color: '#D8CD77',
+				textAlign: 'center',
+			},
+			name: {
+				fontFamily: "Yeon Sung, cursive",
+				fontSize: '100px',
+				fontWeight: 'bold',
+				color: '#303030',
+				textAlign: 'center'
+			},
+			whatWeOffer:{
+				backgroundColor:'#303030',
+				color:'#1E304F',
+				fontFamily: "Yeon Sung, cursive",
+				fontSize: '80px',
+				fontWeight: 'bold',
+				backgroundImage:'url("./dumbells.jpeg")'
+			},
+			pushup:{
+				width: '500px'
+			},
+			test:{
+				color:'#1E304F',
+				fontFamily: "Yeon Sung, cursive"
+			},
+			sqaut: {
+				width: '70%',
+				marginTop: '5%'
+			},
+			motto:{
+				marginTop: '20%'
+			},
+			button: {
+				border:'0px solid #846075',
+				fontSize:'1.75em',
+				padding:'.25em .5em .3125em',
+				color:'#FFF6B6',
+				borderRadius:'.25em',
+				background:'#303030',
+				cursor: 'pointer',
+				margin: '5%'
 			}
 		}
   return (
-    <div  className='background'>
-
-			<Nav></Nav>
-
-			<img style={styles.image} src='./logo.svg'></img>
-
-			<div style={styles.intro}>
-				<h1 className="title">Welcome to calorie calculator!</h1>
-				<h1 className="title"> To calculate your caloric needs,</h1>
-				<h1 className="title"> just answer the questions below!</h1>
+		<>
+		<Nav></Nav>
+		<div className='firstContainer'>
+			<video src='./training.mp4' autoplay="" loop="loop" muted="muted"></video>
+			<div className='content'>
+				<h1>SPIRIT <i class="fas fa-dumbbell"></i><br/>STRENGTH </h1>
 			</div>
+		</div>
+		<div className='secondContainer'>
+			<center>
 
-			<div style={styles.container}>
-				<div></div>
-				<form style={styles.background} onSubmit={this.submit} style={styles.form}>
-						<h2 style={styles.title} >Just fill in this form:</h2>
-							<input type='text' className='input' onInput={(e)=>this.changeField(e, 'age')} placeholder="Please enter your age" ></input>
-							<input type='text' className='input' onInput={(e)=>this.changeField(e, 'weight')} placeholder="Please enter your weight"></input>
-							<select className='select' onChange={this.setGender}>
-								<option disabled selected value> Please select a gender </option>
-								<option value="male">Male</option>
-								<option value="female">Female</option>
-							</select>
+			<h1>Want to lost weight or build muslce?</h1>
+
+
+			<form onSubmit={this.submit} className='form'>
+					<h2>Fill in the form below and we'll help you get started:</h2>
+						<input type='text' className='input' onInput={(e)=>this.changeField(e, 'age')} placeholder="Please enter your age"></input>
+						<input type='text' className='input' onInput={(e)=>this.changeField(e, 'weight')} placeholder="Please enter your weight"></input>
+						<select className='select' onChange={this.setGender}>
+							<option disabled selected value> Please select a gender </option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+							<center> <h1>Please enter your height: </h1> </center>
 							<div className='height'>
-								<span>Height: </span>
-								<select className='select' onChange={this.convertFeet}>
+							<select className='select' onChange={this.convertFeet}>
 								<option disabled selected value>Feet(')</option>
 									{
 										this.state.height.feet.map(foot => <option value={foot}>{foot}</option>)
 									}
-								</select>
-								<select className='select' onChange={this.setInches}>
+							</select>
+							<select className='select' onChange={this.setInches}>
 								<option disabled selected value>Inches(")</option>
 									{
 										this.state.height.inches.map(inch => <option value={inch}>{inch}</option>)
 									}
-								</select>
-							</div>
-				    <select className='select' onChange={(e)=>this.change(e, 'activityLevel')}>
-						<option disabled selected value>Please select an activity level</option>
-				     <option value="low">Not Very Active</option>
-				     <option value="mid">Moderately Active</option>
-				     <option value="high">Very Active</option>
-				   </select>
-					 <div>
-						<button className='button'>Submit</button>
-					</div>
-			</form>
-			<div></div>
+							</select>
+						</div>
+					<select className='select' onChange={(e)=>this.change(e, 'activityLevel')}>
+					<option disabled selected value>Please select an activity level</option>
+					 <option value="low">Not Very Active (little to no exercise)</option>
+					 <option value="mid">Moderately Active (light exercise 1-3 times/week)</option>
+					 <option value="high">Very Active (moderate exercise 3-5 times/week)</option>
+				 </select>
+				 <div>
+					<button className='button'>Submit</button>
+				</div>
+		</form>
+
+			</center>
 		</div>
-  </div>
+
+
+		</>
   );
 }}
 
-export default Home;
+export default Home
