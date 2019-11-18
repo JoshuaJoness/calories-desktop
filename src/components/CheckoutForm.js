@@ -17,7 +17,7 @@ class CheckoutForm extends Component {
 
 	submit = (e) => {
 		e.preventDefault()
-		let token =this.props.stripe.createToken({}).then(token => {
+		let token = this.props.stripe.createToken({}).then(token => {
 			localStorage.setItem('token', token)
 			console.log(token.token.id)
 			let email = this.state.email
