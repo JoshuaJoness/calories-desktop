@@ -147,6 +147,10 @@ class Home extends React.Component {
 				background:'#303030',
 				cursor: 'pointer',
 				margin: '5%'
+			},
+			content: {
+				fontFamily: "'Roboto', sans-serif",
+				fontSize: '70px'
 			}
 		}
   return (
@@ -155,7 +159,7 @@ class Home extends React.Component {
 		<div className='firstContainer'>
 			<video src='./training.mp4' autoplay="" loop="loop" muted="muted"></video>
 			<div className='content'>
-				<h1>SPIRIT <i class="fas fa-dumbbell"></i><br/>STRENGTH </h1>
+				<h1 style={styles.content}>CALORIE <i class="fas fa-dumbbell"></i><br/>COUNTER.tech </h1>
 			</div>
 		</div>
 		<div className='secondContainer'>
