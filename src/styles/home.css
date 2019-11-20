@@ -1,25 +1,36 @@
 body {
-	background-color: #303030;
+	background-color: #E5F0FF;
+	margin-bottom: 20%;
+}
+
+.content{
+	display: grid;
+	grid-template-columns: 50% 50%;
 }
 
 .firstContainer{
+	background-image: url("/barbell.jpeg");
 	width:100%;
 	height:100vh;
 	overflow:hidden;
 	display: flex;
 	justify-content: left;
 	align-items: left;
-	margin-left: 2.5%;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+	background-attachment: fixed;
 }
 
-.firstContainer video{
+.firstContainer img{
 	position: absolute;
 	top: 0;
 	left: 0;
 	object-fit: cover;
 	width: 100%;
-	height: 90vh;
+	height: 100vh;
 	pointer-events: none;
+	opacity: 0.7;
 }
 
 .firstContainer .content{
@@ -30,31 +41,24 @@ body {
 .firstContainer .content h1{
 	padding: 0;
 	margin-right: 0;
-	font-size: 12.5em;
+	font-size: 10.5em;
 	text-align: left;
-	color: white;
+	color: #292A2C;
 	font-family: Yeon Sung, cursive;
+
 }
 
 .secondContainer{
-	background-color: #303030;
-	font-family: Yeon Sung, cursive;
-	color:white;
+	padding-bottom: 320px;
 }
 
-.form{
-	width: 60vw;
+.thirdContainer{
+	background-color: #F8E4D3;
+	height: 120vh;
+	padding-top: 100px;
 }
 
-.select{
-	width: 400px;
-}
-
-.secondContainer{
-	padding-top: 10%;
-}
-
-.secondContainer button{
+.thirdContainer button{
 	border:0.25px solid red;
 	font-size: 1.75em;
 	padding:.25em .5em .3125em;
@@ -65,7 +69,23 @@ body {
 	margin: 5%;
 }
 
+.form{
+	margin-top: 0%;
+	padding-bottom: 20px;
+	width: 40vw;
 
+	border-radius: 5%;
+	background-size: cover;
+	font-family: 'Roboto', sans-serif;
+
+	background-color: #969696;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 1px hsla(0,0%,53%,.9);
+}
+
+.select{
+	width: 400px;
+}
 
 .nav {
 	background-color: #BBBE64;
@@ -77,39 +97,35 @@ body {
 
 .button {
 	border: 2px solid #FFF6B6;
-	background-color: #D8CD77;
-	color: #303030;
+	background-color: #F5D6BA;
+	color: white;
 	padding: 14px 28px;
 	font-size: 16px;
 	cursor: pointer;
-	border-color: #FFF6B6;
+	border-color: white;
 	border-radius: 5px;
 	margin-top: 10%;
 }
 
 button:hover {
-  background-color: #FFF6B6;
-	color: #303030;
+  background-color: white;
+	color: #F5D6BA;
+	opacity: 0.8;
 }
 
 .input {
-	border:2px solid #D8CD77;
-	font-size:1.75em;
-	padding:.25em .5em .3125em;
-	color:#D8CD77;
-	text-decoration-color: #FFF6B6;
-	border-radius:.25em;
-	background:transparent;
-	transition:all .100s;
-	margin-top: 5%;
-	width: 80%;
+	width: 300px;
+}
+
+.input:focus {
+	border-color: white;
 }
 
 .select {
-	border:2px solid #D8CD77;
+	border:2px solid pink;
 	font-size:1.75em;
 	padding:.25em .5em .3125em;
-	color:#D8CD77;
+	color:#000000;
 	border-radius:.25em;
 	background:transparent;
 	transition:all .100s;
@@ -120,4 +136,38 @@ button:hover {
 .height{
 	display: grid;
 	grid-template-columns: 50% 50%;
+}
+
+.fourthContainer{
+	background-color: #FBE6E6;
+	height: 1200px;
+}
+
+.about{
+	margin-top: 100px;
+	width: 80vw;
+	height: 50vh;
+	background-color: #969696;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 1px hsla(0,0%,53%,.9);
+	padding: 30px;
+	z-index: 1;
+}
+
+.title{
+	font-size: 48px;
+}
+
+.aboutDescription{
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.aboutImage{
+	width: 200px;
+	height: 400px;
+}
+
+.description{
+	text-align: left;
 }

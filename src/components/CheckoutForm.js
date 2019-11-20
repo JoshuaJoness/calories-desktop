@@ -3,6 +3,13 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios'
 import qs from 'qs'
 
+const successPayment = data => {
+  alert('Payment Successful');
+};
+const errorPayment = data => {
+  alert('Payment Error');
+};
+
 class CheckoutForm extends Component {
 	state = {
 		email: ''
@@ -25,7 +32,7 @@ class CheckoutForm extends Component {
     		token.token.id,
 				email
 
-			}).then(res=>console.log(res.data)).catch(err=>console.log(err))
+			}).then(successPayment).catch(errorPayment)
 	})
 }
   render() {
@@ -47,7 +54,7 @@ class CheckoutForm extends Component {
 				<input type='text' label='Please enter your email' onChange={this.setEmail}></input>
         <p>Please enter your credit card information below and a copy of the essay will be emailed to you immediately!</p>
         <CardElement />
-        <button >Purchase</button>
+        <button>Purchase</button>
       </form>
 			</center>
     )

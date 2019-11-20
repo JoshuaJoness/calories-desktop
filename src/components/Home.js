@@ -3,6 +3,12 @@ import Nav from './Nav'
 import axios from 'axios'
 import '../styles/home.css'
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText'
 
 class Home extends React.Component {
 
@@ -88,123 +94,150 @@ class Home extends React.Component {
 		},
 		height:{
 			feet:[1,2,3,4,5,6,7,8],
-			inches:[1,2,3,4,5,6,7,8,9,11]
+			inches:[1,2,3,4,5,6,7,8,9,10,11]
 		}
 	}
 
 
 	render() {
 		const styles = {
-			container:{
-				backgroundColor:'#FFF6B6',
-				color: '#303030',
-				textAlign: 'center',
-				fontFamily: "Yeon Sung, cursive",
-				height: '80vh'
+
+			form:{
+				backgroundColor: '#E5F0FF'
 			},
-			intro: {
-				display: 'grid',
-				gridTemplateColumns: '50% 50%',
-				fontFamily: "Yeon Sung, cursive",
-				color: '#D8CD77',
-				textAlign: 'center',
-			},
-			name: {
-				fontFamily: "Yeon Sung, cursive",
-				fontSize: '100px',
-				fontWeight: 'bold',
-				color: '#303030',
-				textAlign: 'center'
-			},
-			whatWeOffer:{
-				backgroundColor:'#303030',
-				color:'#1E304F',
-				fontFamily: "Yeon Sung, cursive",
-				fontSize: '80px',
-				fontWeight: 'bold',
-				backgroundImage:'url("./dumbells.jpeg")'
-			},
-			pushup:{
-				width: '500px'
+			label:{
+				color: '#292A2C'
 			},
 			test:{
-				color:'#1E304F',
-				fontFamily: "Yeon Sung, cursive"
+				backgroundColor: '#E5F0FF',
+				textAlign: 'center',
+				position: 'contain'
 			},
-			sqaut: {
-				width: '70%',
-				marginTop: '5%'
+			header:{
+				fontSize: '100px',
+				color: '#F5D6BA'
 			},
-			motto:{
-				marginTop: '20%'
-			},
-			button: {
-				border:'0px solid #846075',
-				fontSize:'1.75em',
-				padding:'.25em .5em .3125em',
-				color:'#FFF6B6',
-				borderRadius:'.25em',
-				background:'#303030',
-				cursor: 'pointer',
-				margin: '5%'
-			},
-			content: {
-				fontFamily: "'Roboto', sans-serif",
-				fontSize: '70px'
+			description:{
+				fontSize: '50px',
+				color: 'white'
 			}
 		}
+
   return (
 		<>
 		<Nav></Nav>
 		<div className='firstContainer'>
-			<video src='./training.mp4' autoplay="" loop="loop" muted="muted"></video>
-			<div className='content'>
-				<h1 style={styles.content}>CALORIE <i class="fas fa-dumbbell"></i><br/>COUNTER.tech </h1>
-			</div>
-		</div>
-		<div className='secondContainer'>
+			<div></div>
 			<center>
-
-			<h1>Want to lose weight or build muslce?</h1>
-
-
-			<form onSubmit={this.submit} className='form'>
-					<h2>Fill in the form below and we'll help you get started:</h2>
-						<input type='text' className='input' onInput={(e)=>this.changeField(e, 'age')} placeholder="Please enter your age"></input>
-						<input type='text' className='input' onInput={(e)=>this.changeField(e, 'weight')} placeholder="Please enter your weight"></input>
-						<select className='select' onChange={this.setGender}>
-							<option disabled selected value> Please select a gender </option>
-							<option value="male">Male</option>
-							<option value="female">Female</option>
-						</select>
-							<center> <h1>Please enter your height: </h1> </center>
-							<div className='height'>
-							<select className='select' onChange={this.convertFeet}>
-								<option disabled selected value>Feet(')</option>
-									{
-										this.state.height.feet.map(foot => <option value={foot}>{foot}</option>)
-									}
-							</select>
-							<select className='select' onChange={this.setInches}>
-								<option disabled selected value>Inches(")</option>
-									{
-										this.state.height.inches.map(inch => <option value={inch}>{inch}</option>)
-									}
-							</select>
-						</div>
-					<select className='select' onChange={(e)=>this.change(e, 'activityLevel')}>
-					<option disabled selected value>Please select an activity level</option>
-					 <option value="low">Not Very Active (little to no exercise)</option>
-					 <option value="mid">Moderately Active (light exercise 1-3 times/week)</option>
-					 <option value="high">Very Active (moderate exercise 3-5 times/week)</option>
-				 </select>
-				 <div>
-					<button className='button'>Submit</button>
-				</div>
-		</form>
-
+				<h1 style={styles.header}>Lose weight the easy way!</h1>
+				<div style={styles.description}>Stop struggling. You don't have to limit your food choices or starve yourself!<br/><a href='#form'><button className='button'>Get Started</button></a></div>
 			</center>
 		</div>
+
+		<section className='secondContainer'>
+			<center>
+				<div className='about'>
+					<div><h1 className = 'title'>About Me</h1></div>
+					<div className='aboutDescription'>
+					<img src='./abs.jpeg' className='aboutImage'></img>
+					<p className='description'>For years I struggled with my weight. I was dedicated to a workout program and although I could build muscle and gain size quite easily, I could never shed the fat and get lean.<br/><br/>I tried all sorts of diets, restricted certain types of food, and even tried fasting.<br/>It wasn't until I learned how simple weight loss is that I was able to finally get shredded. This is my invitation to you!</p>
+					</div>
+				</div>
+			</center>
+		</section>
+
+
+		<section className='thirdContainer' id='form'>
+			<center>
+				<h2>Fill in the form below and we'll help you get started!</h2>
+				<form onSubmit={this.submit} className='form' style={styles.form}>
+
+				<TextField
+					 id="outlined-basic"
+					 className='input'
+					 label="Please enter your age"
+					 margin="normal"
+					 variant="outlined"
+					 onInput={(e)=>this.changeField(e, 'age')}
+				 /><br/>
+				 <TextField
+						id="outlined-basic"
+						className='input'
+						label="Please enter your weight (lbs)"
+						margin="normal"
+						variant="outlined"
+						onInput={(e)=>this.changeField(e, 'weight')}
+					/><br/>
+
+					<FormControl>
+						<FormHelperText>Please select a gender</FormHelperText>
+						<Select
+						 labelId="demo-simple-select-outlined-label"
+						 id="demo-simple-select-outlined"
+						 onChange={this.setGender}
+						 variant="outlined"
+						 className='input'
+					 	>
+						 <MenuItem value="male">Male</MenuItem>
+						 <MenuItem value="female">Female</MenuItem>
+					 	</Select>
+				  </FormControl><br/>
+
+
+					<FormControl>
+						<FormHelperText>Feet (')</FormHelperText>
+						<Select
+						 labelId="demo-simple-select-outlined-label"
+						 id="demo-simple-select-outlined"
+						 onChange={this.convertFeet}
+						 variant="outlined"
+						 className='input'
+						>
+						{
+							this.state.height.feet.map(foot => <MenuItem value={foot}>{foot}</MenuItem>)
+						}
+						</Select>
+					</FormControl><br/>
+
+					<FormControl>
+						<FormHelperText>Inches (")</FormHelperText>
+						<Select
+						 labelId="demo-simple-select-outlined-label"
+						 id="demo-simple-select-outlined"
+						 onChange={this.setInches}
+						 variant="outlined"
+						 className='input'
+						>
+						{
+							this.state.height.inches.map(inch => <MenuItem value={inch}>{inch}</MenuItem>)
+						}
+						</Select>
+					</FormControl><br/>
+
+
+					<FormControl>
+						<FormHelperText>Please select an activity level</FormHelperText>
+						<Select
+						 labelId="demo-simple-select-outlined-label"
+						 id="demo-simple-select-outlined"
+						 onChange={(e)=>this.change(e, 'activityLevel')}
+						 variant="outlined"
+						 className='input'
+						>
+							<MenuItem value="low">Not Very Active (little to no exercise)</MenuItem>
+							<MenuItem value="mid">Moderately Active (light exercise 1-3 times/week)</MenuItem>
+							<MenuItem value="high">Very Active (moderate exercise 3-5 times/week)</MenuItem>
+						</Select>
+					</FormControl><br/>
+
+					<button className='button'>Submit</button>
+
+
+				</form>
+			</center>
+			</section>
+
+
 
 
 		</>
