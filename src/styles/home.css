@@ -10,6 +10,7 @@ body {
 
 .firstContainer{
 	background-image: url("/barbell.jpeg");
+	opacity: 0.9;
 	width:100%;
 	height:100vh;
 	overflow:hidden;

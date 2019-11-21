@@ -162,7 +162,7 @@ class Home extends React.Component {
 						<h1 style={styles.titleTwo}>to this</h1>
 					</div>
 					<div className='aboutImages'>
-						<img src='./progress.jpg' className='aboutImage1'></img>
+						<img src='./progress.png' className='aboutImage1'></img>
 						<div>
 						<i class="fas fa-arrow-right" style={styles.arrow}></i>
 						<center><h1 style={styles.titleThree}>Learn how...</h1></center>
