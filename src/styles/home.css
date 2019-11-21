@@ -145,29 +145,41 @@ button:hover {
 
 .about{
 	margin-top: 100px;
-	width: 80vw;
-	height: 50vh;
-	background-color: #969696;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 1px hsla(0,0%,53%,.9);
-	padding: 30px;
-	z-index: 1;
 }
 
-.title{
-	font-size: 48px;
-}
-
-.aboutDescription{
+.aboutImages{
+	margin-top: 10%;
+	margin-bottom: 10%;
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.aboutImage1{
+	height: 400px;
+	transform: rotate(90deg);
+	border-radius: 6px;
 }
 
 .aboutImage{
-	width: 200px;
 	height: 400px;
+	transform: rotate(90deg);
+	border-radius: 6px;
 }
 
 .description{
-	text-align: left;
+	text-align: center;
+	line-height: 2;
+}
+
+.bullets{
+	font-size: 48px;
+}
+
+.bulletContainer{
+	margin-bottom: 10%;
+}
+
+.descriptionContainer{
+	display: grid;
+	grid-template-columns: 15% auto 15%;
 }

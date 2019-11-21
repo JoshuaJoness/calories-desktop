@@ -120,6 +120,26 @@ class Home extends React.Component {
 			description:{
 				fontSize: '50px',
 				color: 'white'
+			},
+			arrow:{
+				fontSize: '200px',
+				opacity: '0.7'
+			},
+			title:{
+				display: 'inline',
+				fontSize: '48px',
+				textAlign: 'left',
+				paddingRight: '25%'
+			},
+			titleTwo:{
+				display: 'inline',
+				fontSize: '48px',
+				textAlign: 'left',
+				paddingLeft: '25%'
+			},
+			titleThree:{
+				fontSize: '48px',
+
 			}
 		}
 
@@ -137,10 +157,29 @@ class Home extends React.Component {
 		<section className='secondContainer'>
 			<center>
 				<div className='about'>
-					<div><h1 className = 'title'>About Me</h1></div>
+					<div>
+						<h1 style={styles.title}>From this</h1>
+						<h1 style={styles.titleTwo}>to this</h1>
+					</div>
+					<div className='aboutImages'>
+						<img src='./progress.jpg' className='aboutImage1'></img>
+						<div>
+						<i class="fas fa-arrow-right" style={styles.arrow}></i>
+						<center><h1 style={styles.titleThree}>Learn how...</h1></center>
+						</div>
+						<img src='./progress8.jpg' className='aboutImage'></img>
+					</div>
 					<div className='aboutDescription'>
-					<img src='./abs.jpeg' className='aboutImage'></img>
-					<p className='description'>For years I struggled with my weight. I was dedicated to a workout program and although I could build muscle and gain size quite easily, I could never shed the fat and get lean.<br/><br/>I tried all sorts of diets, restricted certain types of food, and even tried fasting.<br/>It wasn't until I learned how simple weight loss is that I was able to finally get shredded. This is my invitation to you!</p>
+						<div className='bulletContainer'>
+							<h1 className='bullets'>. Eat Anything you want!</h1>
+							<h1 className='bullets'>. Without Starvation!</h1>
+							<h1 className='bullets'>. Carbs are good!</h1>
+						</div>
+						<div className='descriptionContainer'>
+							<div></div>
+							<h1 className='description'>For years I struggled with my weight. I was dedicated to a workout program and although I could build muscle and gain size quite easily, I could never shed the fat and get lean.<br/><br/>I tried all sorts of diets, restricted certain food groups, and even tried fasting.<br/>It wasn't until I learned how simple weight loss is that I was able to finally get shredded. This is my invitation to you!</h1>
+							<div></div>
+						</div>
 					</div>
 				</div>
 			</center>
