@@ -139,7 +139,6 @@ class Home extends React.Component {
 			},
 			titleThree:{
 				fontSize: '48px',
-
 			}
 		}
 
@@ -148,9 +147,13 @@ class Home extends React.Component {
 		<Nav></Nav>
 		<div className='firstContainer'>
 			<div></div>
-			<center>
+			<center className='headers'>
 				<h1 style={styles.header}>Lose weight the easy way!</h1>
-				<div style={styles.description}>Stop struggling. You don't have to limit your food choices or starve yourself!<br/><a href='#form'><button className='button'>Get Started</button></a></div>
+				<div style={styles.description}>Stop struggling. You don't have to limit your food choices or starve yourself!<br/>
+					<a href='#form'>
+						<button className='button'>Get Started</button>
+					</a>
+				</div>
 			</center>
 		</div>
 
@@ -162,12 +165,12 @@ class Home extends React.Component {
 						<h1 style={styles.titleTwo}>to this</h1>
 					</div>
 					<div className='aboutImages'>
-						<img src='./progress.png' className='aboutImage1'></img>
+						<img src='./public/progress.jpg' className='aboutImage1'></img>
 						<div>
 						<i class="fas fa-arrow-right" style={styles.arrow}></i>
 						<center><h1 style={styles.titleThree}>Learn how...</h1></center>
 						</div>
-						<img src='./progress8.jpg' className='aboutImage'></img>
+						<img src='./public/progress8.jpg' className='aboutImage'></img>
 					</div>
 					<div className='aboutDescription'>
 						<div className='bulletContainer'>
