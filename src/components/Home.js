@@ -119,7 +119,8 @@ class Home extends React.Component {
 			},
 			description:{
 				fontSize: '50px',
-				color: 'white'
+				fontWeight: 'bold',
+				color: 'black'
 			},
 			arrow:{
 				fontSize: '200px',
@@ -139,6 +140,9 @@ class Home extends React.Component {
 			},
 			titleThree:{
 				fontSize: '48px',
+			},
+			formHeader:{
+				fontSize: '40px'
 			}
 		}
 
@@ -165,12 +169,12 @@ class Home extends React.Component {
 						<h1 style={styles.titleTwo}>to this</h1>
 					</div>
 					<div className='aboutImages'>
-						<img src='./progress.jpg' className='aboutImage1'></img>
+						<img src='./Progress.jpg' className='aboutImage1'></img>
 						<div>
 						<i class="fas fa-arrow-right" style={styles.arrow}></i>
 						<center><h1 style={styles.titleThree}>Learn how...</h1></center>
 						</div>
-						<img src='./progress8.jpg' className='aboutImage'></img>
+						<img src='./Progress8.jpg' className='aboutImage'></img>
 					</div>
 					<div className='aboutDescription'>
 						<div className='bulletContainer'>
@@ -191,7 +195,7 @@ class Home extends React.Component {
 
 		<section className='thirdContainer' id='form'>
 			<center>
-				<h2>Fill in the form below and we'll help you get started!</h2>
+				<h1 style={styles.formHeader}>Fill in the form below and we'll help you get started!</h1><br/>
 				<form onSubmit={this.submit} className='form' style={styles.form}>
 
 				<TextField

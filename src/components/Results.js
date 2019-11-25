@@ -36,6 +36,7 @@ class Results extends React.Component {
 						</div>
 					</center>
 					<center className='resultsSecondContainer'>
+						<img src='./progress8.jpg' className='resultsImages'></img>
 						<p>Losing weight can be hard. For years I struggled with my weight. I tried vegan diets, carnivore diets, no-carb diets, slow-carb diets, and of course, my favorite, the KETOGENIC diet!<br/><br/>
 						Little did I know that losing weight is easy and that you can do it while eating whatever you want! You don't have to give up your favorite foods! Carbs are NOT the enemy. And yes, you can even have a drink or 2 every night.<br/><br/>
 						If you'd like to learn how I did it, then grab a copy of my e-book below. It's <b>short, concise, informative, and to the point</b>. Plus, for a limited time it's only a dollar.
@@ -45,8 +46,10 @@ class Results extends React.Component {
 							<li>What causes weight loss!</li>
 							<li>Why you can eat whatever you want and still lose weight!</li>
 							<li>And how you can immediately begin cutting calories from your diet right now!</li>
+							<li>PROGRAMS AND DIET PLANS AVAILABLE UPON REQUEST</li>
 						</ul>
 						</p>
+						<button>Purchase Now</button>
 					</center>
 				</center>
 			</>

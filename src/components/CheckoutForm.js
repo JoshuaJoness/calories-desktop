@@ -45,15 +45,18 @@ class CheckoutForm extends Component {
 				paddingLeft: '2.5%',
 				paddingRight: '2.5%',
 				borderRadius: '5%'
+			},
+			cardElement: {
+				border: '1px solid black'
 			}
 		}
     return (
 			<center>
       <form style={styles.form} onSubmit={this.submit}>
-				<p>Please enter your email below:</p>
+				<h2>Please complete the information below and a copy of the essay will be emailed to you immediately!</h2>e-mail: 
 				<input type='text' label='Please enter your email' onChange={this.setEmail}></input>
-        <p>Please enter your credit card information below and a copy of the essay will be emailed to you immediately!</p>
-        <CardElement />
+				<br/><br/>
+        <CardElement style={styles.cardElement}/>
         <button>Purchase</button>
       </form>
 			</center>

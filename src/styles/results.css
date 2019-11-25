@@ -1,10 +1,10 @@
 body{
 	color:black;
 	font-family: Roboto;
-	color: black;
 }
 .resultsContainer{
 	width: 60vw;
+	background-color: #F7E1CC;
 }
 .resultsContainer i{
 	font-size: 50px;
@@ -17,12 +17,12 @@ body{
 	line-height: 2;
 }
 .resultsContainer b{
-	color: pink;
+	color: darkgrey;
 	font-size: 30px;
 }
 .resultsSecondContainer{
 	height:1500px;
-	background-color: pink;
+	background-color: white;
 	padding-top: 5%;
 	color: #212121;
 	font-size: 30px;
@@ -33,4 +33,10 @@ body{
 }
 .resultsSecondContainer p{
 
+}
+.resultsImages{
+	height: 400px;
+	transform: rotate(90deg);
+	border-radius: 6px;
+	margin: 5%;
 }
