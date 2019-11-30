@@ -1,0 +1,33 @@
+body{
+	background-color: #A7BBEC;
+}
+.containerOne{
+	height: 100vh;
+}
+.titleContainer{
+	margin-top: 80%;
+}
+.title{
+	font-family: 'Share Tech Mono', monospace;
+}
+.button{
+	height: 40px;
+	width: 150px;
+	position: relative;
+
+	display: block;
+	margin: 30px auto;
+	padding: 0;
+
+	overflow: hidden;
+
+	border-width: 0;
+	outline: none;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+	background-color: grey;
+	color: #ecf0f1;
+
+	transition: background-color .3s;
+}
