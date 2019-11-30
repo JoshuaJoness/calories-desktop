@@ -1,42 +1,48 @@
-/* body{
-	color:black;
-	font-family: Roboto;
+* {
+    margin: 0;
+    padding: 0;
 }
 .resultsContainer{
-	width: 60vw;
-	background-color: #F7E1CC;
+	display: grid;
+	grid-template-columns: 10% 80% 10%;
+	margin-top: 20%;
 }
-.resultsContainer i{
-	font-size: 50px;
+.calorieCount{
+	padding: 10%;
+	line-height: 2;
+}
+.calorieTitle{
 	margin-top: 10%;
+	font-family: 'Pacifico', cursive;
+	font-weight: 100;
+	color: #493657;
 }
-.resultsContainer h2{
-	color:black;
-	font-family: Roboto;
-	font-weight: normal;
-	line-height: 2;
+.calorieDescription{
+	margin-top: 10%;
+	font-family: 'Solway', serif;
+	font-weight: light;
 }
-.resultsContainer b{
-	color: darkgrey;
-	font-size: 30px;
-}
-.resultsSecondContainer{
-	height:1500px;
+.firstContainer{
 	background-color: white;
-	padding-top: 5%;
-	color: #212121;
-	font-size: 30px;
-	font-family: Roboto;
-	padding-left: 10%;
-	padding-right: 10%;
+}
+#resultsContainerThree{
+	background-color: white;
+	margin: 0;
+}
+#resultsContainerTwo{
+	background-color: #E8E8E8;
+}
+.disclaimerContainer{
+	display: grid;
+	grid-template-columns: 10% 80% 10%;
+	font-family: 'Solway', serif;
+	font-weight: light;
+	background-color: #BEE5BF;
+	margin-top: 15%;
+	padding-top: 7%;
+	padding-bottom: 10%;
 	line-height: 2;
 }
-.resultsSecondContainer p{
-
+.disclaimerContainer b{
+	color: #CE7DA5;
 }
-.resultsImages{
-	height: 400px;
-	transform: rotate(90deg);
-	border-radius: 6px;
-	margin: 5%;
-} */

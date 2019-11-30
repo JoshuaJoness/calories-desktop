@@ -14,12 +14,7 @@ class Routes extends React.Component {
 			<BrowserRouter>
 				<Switch>
 					<Route path='/results' component={Results}></Route>
-					<Route path='/purchase' component={Purchase}></Route>
-					<Route path='/mobile' component={Mobile}></Route>
-					<Route path='/upload' component={Upload}></Route>
-					<Route path='/form' component={CalorieForm}></Route>
-					<Route path='/info' component={Info}></Route>
-					<Route path='/' component={Home}></Route>
+					<Route path='/' component={Mobile}></Route>
 				</Switch>
 			</BrowserRouter>
 		)
