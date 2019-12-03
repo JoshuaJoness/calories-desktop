@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Particles from 'react-particles-js';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -10,102 +10,102 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import axios from 'axios'
 import '../styles/mobile.css'
 
-class Mobile extends React.Component {
-	changeField (e, field){
+const Hooks = props => {
+	const [state, setState] = useState({
+			user:{
+				totalInches: 0,
+				activityLevel: ''
+			},
+			height:{
+				feet:[1,2,3,4,5,6,7,8],
+				inches:[1,2,3,4,5,6,7,8,9,10,11]
+			}
+		})
+
+
+	const changeField = (e, field) => {
 		console.log('hello');
-		let user = this.state.user
+		let user = state.user
 		user[field] = Number(e.target.value)
-		this.setState({user})
-		console.log(this.state.user);
+		setState({...state, user})
+		console.log(state.user);
 	}
 
-	convertFeet = (e) => {
-		let user = this.state.user
+	const convertFeet = (e) => {
+		let user = state.user
 		user.totalInches = Number(e.target.value * 12)
-		this.setState({user})
-		console.log(this.state.user);
+		setState({...state, user})
+		console.log(state.user);
 	}
 
-	setInches = (e) => {
-		if (this.state.user.totalInches === 0) {
+	const setInches = (e) => {
+		if (state.user.totalInches === 0) {
 			alert("Please enter 'feet' first, if you make a mistake, refresh the page")
 		} else {
-		let user = this.state.user
+		let user = state.user
 		user.totalInches = user.totalInches + Number(e.target.value)
-		this.setState({user})
-		console.log(this.state.user);
+		setState({...state, user})
+		console.log(state.user);
 		}
 	}
 
-	setGender = (e) => {
+	const setGender = (e) => {
 		console.log(e.target.value);
-		let user = this.state.user
+		let user = state.user
 		if (e.target.value === 'male') {
 			user.gender = 'male'
-			this.setState({user})
-			console.log(this.state.user.gender);
+			setState({...state, user})
+			console.log(state.user.gender);
 		} else {
 			user.gender = 'female'
-			this.setState({user})
-			console.log(this.state.user.gender);
+			setState({...state, user})
+			console.log(state.user.gender);
 		}
 	}
 
-	change = (e) => {
+	const change = (e) => {
 		console.log(e.target.value);
-		let user = this.state.user
+		let user = state.user
 		if (e.target.value === 'low') {
 			user.activityLevel = 'low'
-			this.setState({user})
+			setState({...state, user})
 		} else if (e.target.value === 'mid') {
 			user.activityLevel = 'mid'
-			this.setState({user})
+			setState({...state, user})
 		} else {
 			user.activityLevel = 'high'
-			this.setState({user})
+			setState({...state, user})
 		}
-		console.log(this.state.user);
+		console.log(state.user);
 	}
 
-	submit = (e) => {
+	const submit = (e) => {
 		e.preventDefault()
-		let user = this.state.user
+		let user = state.user
 		axios.post(`${process.env.REACT_APP_API}/calories`,
-		this.state.user
+		state.user
 	).then(res => {
 		console.log('res.data',res.data);
-		let maintain = this.state.maintain
+		let maintain = state.maintain
 		maintain = res.data.maintain
-		this.setState({maintain})
-		console.log('this.state.maintain', this.state.maintain);
+		setState({...state, maintain})
+		console.log('state.maintain', state.maintain);
 		this.props.history.push({
 			pathname: '/results',
-			maintain: this.state.maintain})
+			maintain: state.maintain})
 	}).catch(err => {
 		console.log(err);
 	})
 	}
 
-	state = {
-		user:{
-			totalInches: 0,
-			activityLevel: ''
+	const styles = {
+		particles:{
+			position: 'absolute',
+			height: "100vh",
+			top: 0,
+			left: 0
 		},
-		height:{
-			feet:[1,2,3,4,5,6,7,8],
-			inches:[1,2,3,4,5,6,7,8,9,10,11]
-		}
 	}
-	
-	render(){
-		const styles = {
-			particles:{
-				position: 'absolute',
-				height: "100vh",
-				top: 0,
-				left: 0
-			},
-		}
 		return(
 			<div>
 				<div className='containerOne'>
@@ -143,14 +143,14 @@ class Mobile extends React.Component {
 						</center>
 						<center className='formContainer'>
 							<div></div>
-							<form onSubmit={this.submit} className='form' style={styles.form}>
+							<form onSubmit={submit} className='form' style={styles.form}>
 								<TextField
 									 id="outlined-basic"
 									 className='input'
 									 label="Please enter your age"
 									 margin="normal"
 									 variant="outlined"
-									 onInput={(e)=>this.changeField(e, 'age')}
+									 onInput={(e)=>changeField(e, 'age')}
 								 /><br/>
 								 <TextField
 										id="outlined-basic"
@@ -158,14 +158,14 @@ class Mobile extends React.Component {
 										label="Please enter your weight (lbs)"
 										margin="normal"
 										variant="outlined"
-										onInput={(e)=>this.changeField(e, 'weight')}
+										onInput={(e)=>changeField(e, 'weight')}
 									/><br/>
 									<FormControl>
 										<FormHelperText>Please select a gender</FormHelperText>
 										<Select
 										 labelId="demo-simple-select-outlined-label"
 										 id="demo-simple-select-outlined"
-										 onChange={this.setGender}
+										 onChange={setGender}
 										 variant="outlined"
 										 className='input'
 										>
@@ -178,12 +178,12 @@ class Mobile extends React.Component {
 										<Select
 										 labelId="demo-simple-select-outlined-label"
 										 id="demo-simple-select-outlined"
-										 onChange={this.convertFeet}
+										 onChange={convertFeet}
 										 variant="outlined"
 										 className='input'
 										>
 										{
-											this.state.height.feet.map(foot => <MenuItem value={foot}>{foot}</MenuItem>)
+											state.height.feet.map(foot => <MenuItem value={foot}>{foot}</MenuItem>)
 										}
 										</Select>
 									</FormControl><br/>
@@ -192,12 +192,12 @@ class Mobile extends React.Component {
 										<Select
 										 labelId="demo-simple-select-outlined-label"
 										 id="demo-simple-select-outlined"
-										 onChange={this.setInches}
+										 onChange={setInches}
 										 variant="outlined"
 										 className='input'
 										>
 										{
-											this.state.height.inches.map(inch => <MenuItem value={inch}>{inch}</MenuItem>)
+											state.height.inches.map(inch => <MenuItem value={inch}>{inch}</MenuItem>)
 										}
 										</Select>
 									</FormControl><br/>
@@ -206,7 +206,7 @@ class Mobile extends React.Component {
 										<Select
 										 labelId="demo-simple-select-outlined-label"
 										 id="demo-simple-select-outlined"
-										 onChange={(e)=>this.change(e, 'activityLevel')}
+										 onChange={(e)=>change(e, 'activityLevel')}
 										 variant="outlined"
 										 className='input'
 										>
@@ -223,6 +223,6 @@ class Mobile extends React.Component {
 			</div>
 		)
 	}
-}
 
-export default Mobile
+
+export default Hooks
