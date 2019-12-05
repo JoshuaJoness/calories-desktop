@@ -9,21 +9,32 @@ body{
 	height: 100vh;
 }
 .titleContainer{
-	margin-top: 20%;
+	margin-top: 70%;
+}
+/* tablet */
+@media only screen and (min-width: 768px) {
+	.titleContainer{
+		margin-top: 50%;
+	}
+	.form{
+		width: 500px;
+		margin-left: 20%;
+	}
+}
+/* destkop */
+@media only screen and (min-width: 1025px) {
+	.titleContainer{
+		margin-top: 20%;
+	}
+	.form{
+		width: 500px;
+		margin-left: 28%;
+	}
 }
 .titleContainer a{
 	text-decoration: none;
 }
-@media screen and (max-width: 600px) {
-	.titleContainer{
-		margin-top: 80%;
-	}
-}
-@media screen and (max-width: 1025px) {
-	.titleContainer{
-		margin-top: 70%;
-	}
-}
+
 .title{
 	font-family: 'Share Tech Mono', monospace;
 	color: #D3F9B5

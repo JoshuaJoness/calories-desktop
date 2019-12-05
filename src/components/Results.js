@@ -9,6 +9,9 @@ class Results extends React.Component {
 		let maintain = this.props.location.maintain
 		this.setState({gain:(+this.props.location.maintain + +500).toFixed(0)})
 	}
+	componentDidMount() {
+		window.scrollTo(0, 0);
+}
 	render(){
 		const styles ={
 			link: {
