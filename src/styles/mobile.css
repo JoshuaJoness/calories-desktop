@@ -1,5 +1,5 @@
 body{
-	background-color: #BEE5BF;
+	background-color: #5F5C5C;
 }
 * {
     margin: 0;
@@ -21,11 +21,12 @@ body{
 }
 @media screen and (max-width: 1025px) {
 	.titleContainer{
-		margin-top: 50%;
+		margin-top: 70%;
 	}
 }
 .title{
 	font-family: 'Share Tech Mono', monospace;
+	color: #D3F9B5
 }
 .button{
 	height: 40px;
@@ -53,16 +54,13 @@ body{
 	margin: 0;
 	background-color: #FFFFFF;
 	position: relative;
-	padding-top: 15%;
+	padding-top: 5%;
 }
 .containerTwoTitle{
 	font-family: 'Pacifico', cursive;
 	font-size: 50px;
 	font-weight: 100;
-	color: #493657;
-}
-.containerTwoTitleContainer{
-	margin-bottom: 0%;
+	color: #5F5C5C;
 }
 .input{
 	width: 250px;
@@ -73,7 +71,7 @@ body{
 }
 .form{
 	background-color: #E8E8E8;
-	margin-top: 40%;
+	margin-top: 5%;
 	padding-top: 10%;
 	padding-bottom: 5%;
 	border-radius: 6px;

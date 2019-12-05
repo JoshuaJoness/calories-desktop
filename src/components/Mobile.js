@@ -11,6 +11,17 @@ import axios from 'axios'
 import '../styles/mobile.css'
 
 class Mobile extends React.Component {
+	state = {
+		user:{
+			totalInches: 0,
+			activityLevel: ''
+		},
+		height:{
+			feet:[1,2,3,4,5,6,7,8],
+			inches:[1,2,3,4,5,6,7,8,9,10,11]
+		}
+	}
+
 	changeField (e, field){
 		console.log('hello');
 		let user = this.state.user
@@ -86,31 +97,24 @@ class Mobile extends React.Component {
 	})
 	}
 
-	state = {
-		user:{
-			totalInches: 0,
-			activityLevel: ''
-		},
-		height:{
-			feet:[1,2,3,4,5,6,7,8],
-			inches:[1,2,3,4,5,6,7,8,9,10,11]
-		}
-	}
-	
 	render(){
 		const styles = {
 			particles:{
 				position: 'absolute',
 				height: "100vh",
 				top: 0,
-				left: 0
+				left: 0,
+				zIndex: -1
 			},
+			title: {
+					color: '#D3F9B5'
+			}
 		}
 		return(
 			<div>
 				<div className='containerOne'>
 					<center className='titleContainer'>
-						<h1 className='title'>
+						<h1 className='title' style={styles.title}>
 							caloriecounter.tech
 							<br/><br/>
 							<i class="fas fa-utensils"></i>   <i class="fas fa-weight"></i>   <i class="fas fa-dumbbell"></i>
