@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav'
 import '../styles/results.css'
 
 class Results extends React.Component {
@@ -21,6 +22,7 @@ class Results extends React.Component {
 		return(
 			<>
 				<div>
+					<Nav />
 						<div className='firstContainer'>
 
 							<div className='calorieCount'>
@@ -35,7 +37,7 @@ class Results extends React.Component {
 								<center>
 									<h1><i class="fas fa-weight"></i></h1>
 									<h1 className='calorieTitle'>{Number(this.props.location.maintain).toFixed(0) - 500} calories</h1>
-									<h2 className='calorieDescription'>If you want to <b><u>lose weight</u></b> you need to use more calories than you consume. In order to do this we subtract 500 calories from the number above to get:</h2>
+									<h2 className='calorieDescription'>If you want to <b><u>lose weight</u></b> you need to use more calories than you consume. We achieve this by subtracting 500 calories from our original result to get: {Number(this.props.location.maintain).toFixed(0) - 500} calories</h2>
 								</center>
 							</div>
 
@@ -43,7 +45,7 @@ class Results extends React.Component {
 								<center>
 									<h1><i class="fas fa-dumbbell" ></i></h1>
 									<h1 className='calorieTitle'>{this.state.gain} calories</h1>
-									<h2 className='calorieDescription'>If you want to <b><u>build muscle</u></b> you have to consume more calories than you use. In order to do this we add 500 calories to the number above:</h2>
+									<h2 className='calorieDescription'>If you want to <b><u>build muscle</u></b> you have to consume more calories than you use. We achieve this by adding 500 calories to our original result to get: {this.state.gain} calories</h2>
 								</center>
 							</div>
 

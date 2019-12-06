@@ -6,3 +6,21 @@
 .navItem :hover{
 	opacity: 0.5;
 } */
+.nav {
+    top: 10px;
+    z-index: 100;
+  	position: fixed;
+    width: 100%;
+		color: white;
+		display: grid;
+		grid-template-columns: 10% 80% 10%;
+}
+
+.nav Button{
+	color: #272D2D;
+	font-size: 25px;
+}
+.nav a{
+	color: #272D2D;
+	font-size: 27px;
+}

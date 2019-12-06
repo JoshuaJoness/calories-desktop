@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText'
+import Nav from './Nav'
 import axios from 'axios'
 import '../styles/mobile.css'
 
@@ -112,12 +113,13 @@ class Mobile extends React.Component {
 		}
 		return(
 			<div>
+			<Nav />
 				<div className='containerOne'>
 					<center className='titleContainer'>
 						<h1 className='title' style={styles.title}>
 							caloriecounter.tech
 							<br/><br/>
-							<i class="fas fa-utensils"></i>   <i class="fas fa-weight"></i>   <i class="fas fa-dumbbell"></i>
+
 						</h1>
 						<a href="#calculator"><button className='button' href="#calculator">Get Started</button></a>
 					</center>
