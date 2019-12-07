@@ -29,7 +29,7 @@ class Results extends React.Component {
 								<center>
 									<h1><i class="fas fa-utensils"></i></h1>
 									<h1 className='calorieTitle'>{Number(this.props.location.maintain).toFixed(0)} calories</h1>
-									<h2 className='calorieDescription'>This is roughly the amount of calories that your body uses per day just to keep you alive:</h2>
+									<h2 className='calorieDescription'>This is roughly the amount of calories that your body uses per day just to keep you alive</h2>
 								</center>
 							</div>
 
