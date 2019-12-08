@@ -1,10 +1,12 @@
 import React from 'react'
+import Nav from './Nav'
 import '../styles/about.css'
 
 class About extends React.Component{
 	render(){
 		return(
 			<>
+				<Nav/>
 				<div className='about-container'>
 					<h1>About</h1>
 					<p>Calorie Counter *dot* tech is a personal project that was developed by Joshua Jones (me). The purpose of this app is to quickly give you an estimate of the amount of calories that you should be consuming daily to achieve your goals</p>
