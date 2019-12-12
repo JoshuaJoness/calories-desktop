@@ -266,11 +266,8 @@ class Mobile extends React.Component {
 
 						<form onSubmit={this.signup} className='mailingListForm'>
 						<h1>Want to learn more about calorie counting?</h1><br/><br/>
-						<h1 className='description'>Sign up to my newsletter below to recieve your<br/> free copy of <i>Eat Anything, Lose Weight</i>.</h1>
-
-						<br/><br/>
 						<h1>
-							Enter your email below to get started:
+							Enter your email below to receive your free calorie counting PDF:
 
 						</h1>
 						<TextField
@@ -279,7 +276,7 @@ class Mobile extends React.Component {
 				           label="Email"
 
 				           placeholder="email@gmail.com"
-				           helperText="Please enter your email"
+				           helperText="By entering your email, you agree to receive emails for strongr.best"
 
 				           margin="normal"
 				           InputLabelProps={{
