@@ -262,30 +262,13 @@ class Mobile extends React.Component {
 
 						<a href="https://www.youtube.com/watch?v=cJG2Wap5GYM" target="blank">Watch on YouTube</a>
 
-						<form onSubmit={this.signup} className='mailingListForm'>
+						<div className="learnMore">
 						<h1>Want to learn more about calorie counting?</h1><br/><br/>
-						<h1>
-							Enter your email below to receive your free calorie counting PDF:
+						<h1>Sign up to my mailing list below to receive a free PDF outlining how to get started with counting your calories.</h1>
 
-						</h1>
-						<TextField
-				           id="filled-full-width"
-									 type= 'email'
-				           label="Email"
 
-				           placeholder="email@gmail.com"
-				           helperText="By entering your email, you agree to receive emails for strongr.best"
+						</div>
 
-				           margin="normal"
-				           InputLabelProps={{
-				             shrink: true,
-				           }}
-				           variant="filled"
-									 onInput={this.collectEmail}
-				         /><br />
-						<button className='mailingListButton'>Submit</button><br/><br/>
-						<p>Sorry, I am still editing the code, the page will not refresh. Just press once and you should receive the email </p>
-						</form>
 						</center>
 						<div></div>
 					</div>
