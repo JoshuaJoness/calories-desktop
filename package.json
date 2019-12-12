@@ -11,6 +11,7 @@
     "qs": "^6.9.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-mailchimp-form": "^1.0.2",
     "react-particles-js": "^2.7.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
