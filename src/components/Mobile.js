@@ -113,10 +113,8 @@ class Mobile extends React.Component {
 			let email = this.state.email
 			axios.post(`${process.env.REACT_APP_API}/essay`,
 			email).then(res => {
-				const { router } = this.props
-				router.push('/')
+				this.props.history.push('/')
 				console.log(res.data);
-				alert('Success! Please check your email.')
 			}).catch(err => {
 				console.log(err);
 			})
