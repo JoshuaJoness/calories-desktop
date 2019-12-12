@@ -20,11 +20,13 @@ class Mobile extends React.Component {
 		height:{
 			feet:[1,2,3,4,5,6,7,8],
 			inches:[1,2,3,4,5,6,7,8,9,10,11]
+		},
+		email: {
+			email: ''
 		}
 	}
 
 	changeField (e, field){
-		console.log('hello');
 		let user = this.state.user
 		user[field] = Number(e.target.value)
 		this.setState({user})
@@ -98,6 +100,32 @@ class Mobile extends React.Component {
 	})
 	}
 
+	collectEmail = (e) => {
+		let email = this.state.email
+		let userEmail = e.target.value
+		email.email = userEmail
+		this.setState({email})
+	}
+
+	signup = (e) => {
+		if (this.state.email.email) {
+			e.preventDefault()
+			let email = this.state.email
+			axios.post(`${process.env.REACT_APP_API}/essay`,
+			email).then(res => {
+				const { router } = this.props
+				router.push('/')
+				console.log(res.data);
+				alert('Success! Please check your email.')
+			}).catch(err => {
+				console.log(err);
+			})
+		} else {
+			alert('Please enter your email')
+		}
+
+	}
+
 	render(){
 		const styles = {
 			particles:{
@@ -108,44 +136,26 @@ class Mobile extends React.Component {
 				zIndex: -1
 			},
 			title: {
-					color: '#D3F9B5'
+					color: '#CE8F70'
 			}
 		}
 		return(
 			<div>
 			<Nav />
-				<div className='containerOne'>
+				<div className='containerOne' id='intro'>
 					<center className='titleContainer'>
 						<h1 className='title' style={styles.title}>
-							caloriecounter.tech
+							STRONG(e)r
 							<br/><br/>
-
+							<i class="fas fa-dumbbell"></i>
 						</h1>
-						<a href="#calculator"><button className='button' href="#calculator">Get Started</button></a>
+						<a href="#calculator"><button className='button'>Start</button></a>
 					</center>
-					<Particles style={styles.particles}
-							params={{
-								"particles": {
-										"number": {
-												"value": 50
-										},
-										"size": {
-												"value": 3
-										}
-								},
-								"interactivity": {
-										"events": {
-												"onhover": {
-														"enable": true,
-														"mode": "repulse"
-												}
-										}
-								}
-						}} />
+
 					</div>
 					<div className='containerTwo' id='calculator'>
 						<center className='containerTwoTitleContainer'>
-							<h1 className='containerTwoTitle'>Calculator</h1>
+							<h1 className='containerTitle'>Calculator</h1>
 						</center>
 						<center className='formContainer'>
 							<div></div>
@@ -225,6 +235,63 @@ class Mobile extends React.Component {
 								</form>
 								<div></div>
 							</center>
+					</div>
+					<div className='containerThree'>
+						<div></div>
+						<center>
+						<h1 className='containerTitle'>My Story</h1>
+						<div
+							className="video"
+							style={{
+								position: "relative",
+								paddingBottom: "56.25%" /* 16:9 */,
+								paddingTop: 25,
+								height: 0
+							}}
+						>
+							<iframe
+								style={{
+									position: "absolute",
+									top: 0,
+									left: 0,
+									width: "100%",
+									height: "100%"
+								}}
+								src='https://www.youtube.com/embed/cJG2Wap5GYM'
+								frameBorder="0"
+							/>
+						</div><br/>
+
+						<a href="https://www.youtube.com/watch?v=cJG2Wap5GYM" target="blank">Watch on YouTube</a>
+
+						<form onSubmit={this.signup} className='mailingListForm'>
+						<h1>Want to learn more about calorie counting?</h1><br/><br/>
+						<h1 className='description'>Sign up to my newsletter below to recieve your<br/> free copy of <i>Eat Anything, Lose Weight</i>.</h1>
+
+						<br/><br/>
+						<h1>
+							Enter your email below to get started:
+
+						</h1>
+						<TextField
+				           id="filled-full-width"
+									 type= 'email'
+				           label="Email"
+
+				           placeholder="email@gmail.com"
+				           helperText="Please enter your email"
+
+				           margin="normal"
+				           InputLabelProps={{
+				             shrink: true,
+				           }}
+				           variant="filled"
+									 onInput={this.collectEmail}
+				         /><br />
+						<button className='mailingListButton'>Submit</button>
+						</form>
+						</center>
+						<div></div>
 					</div>
 			</div>
 		)
