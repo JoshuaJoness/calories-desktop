@@ -17,20 +17,7 @@ export default function Nav() {
   };
 		return (
 			<nav className="nav">
-				<Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-					<i class="fas fa-bars"></i>
-				</Button>
-				<Menu
-	        id="simple-menu"
-	        anchorEl={anchorEl}
-	        keepMounted
-	        open={Boolean(anchorEl)}
-	        onClose={handleClose}
-	      >
-	        <MenuItem onClick={handleClose}>About</MenuItem>
-	        <MenuItem onClick={handleClose}>Services</MenuItem>
-	        <MenuItem onClick={handleClose}>Contact</MenuItem>
-	      </Menu>
+				<div></div>
 				<div></div>
 				<Link to="/"><i class="fas fa-dumbbell"></i></Link>
 			</nav>
