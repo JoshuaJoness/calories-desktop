@@ -32,7 +32,7 @@ export default function Nav() {
 	        <MenuItem onClick={handleClose}>Contact</MenuItem>
 	      </Menu>
 				<div></div>
-				<a href="#intro"><i class="fas fa-dumbbell"></i></a>
+				<Link to="/"><i class="fas fa-dumbbell"></i></Link>
 			</nav>
 		)
 }

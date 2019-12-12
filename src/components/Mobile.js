@@ -288,7 +288,8 @@ class Mobile extends React.Component {
 				           variant="filled"
 									 onInput={this.collectEmail}
 				         /><br />
-						<button className='mailingListButton'>Submit</button>
+						<button className='mailingListButton'>Submit</button><br/><br/>
+						<p>Sorry, I am still editing the code, the page will not refresh. Just press once and you should receive the email </p>
 						</form>
 						</center>
 						<div></div>
